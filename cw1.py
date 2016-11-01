@@ -1,21 +1,30 @@
-#Tak pisze sie komentarze
-
-import numpy as tab
+from __future__ import division
+import numpy
 import sys
 import matplotlib.pyplot as plt
+import math
 
 B=2
 z=[-1,1]
-L=-1
-U=2
-e=tab.array([-1,0,1,2])
-d1=tab.array([0,1])
-d2=[0,1]
-d3=[0,1]
-d4=[0,1]
+d=[[0,0,0],
+   [0,0,1],
+   [0,1,0],
+   [1,0,0],
+   [1,1,0],
+   [0,1,1],
+   [1,0,1],
+   [1,1,1]]
+e=[-1,0,1,2]
+XX=[]
 
-#x=z*(d1/B+d2/B+d3/b+d4/b)*2^(e)
+for i in range(0,7):
+   for znak in z:
+      for cecha in e:
+         x=znak*(d[i][0]/(B**1) + d[i][1]/(B**2) + d[i][2]/(B**3))*(B**cecha)
+         XX.append(x)
+   
+Y = [0]*len(XX)
 
-k=0
-for x in e:
-   x=z 
+plt.figure(1)
+plt.plot(XX,Y,"x")
+plt.show()

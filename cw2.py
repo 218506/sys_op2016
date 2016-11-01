@@ -1,3 +1,4 @@
+from __future__ import division
 import numpy
 import matplotlib.pyplot as plt
 import math as m
@@ -79,7 +80,7 @@ if gora < dol:
 #metoda arange(arg1,arg2,arg3) - tworzy wektor arg1-dolna granica przedzialu
 #arg2 - element nastepny po ostatnim
 #arg3 - skok
-x=numpy.arange(dol,gora+0.01,0.1) #definicja zakresu
+x=numpy.arange(dol,gora+0.01,0.01) #definicja zakresu
 
 print("Prosze wybrac, dla ktorej funkcji przeprowadzic test:")
 print("1. f(x)=exp(x)")
@@ -103,8 +104,8 @@ else :
 #liczenie bledu wynikajacego z 1 oraz 2 przyblizenia
 i=0
 while i < len(y):
-    z1.append(m.log(m.fabs(y[i]-y1[i])))
-    z2.append(m.log(m.fabs(y[i]-y2[i])))
+    z1.append(m.log10(m.fabs(y[i]-y1[i])))
+    z2.append(m.log10(m.fabs(y[i]-y2[i])))
     i+=1
 
 #wyrysowanie wykresu
